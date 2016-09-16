@@ -1,0 +1,22 @@
+.posts-wrapper.row
+.posts-wrapper
+  .post
+    .post-body
+      .image-wrap
+
+        = simple_form_for @post, html: { multipart: true } do |f|
+          .row
+
+          .container-fluid
+            .form-group.text-center
+              %h4 投稿内容の編集
+            .image.center-block
+              =image_tag @post.image.url(:medium), class:'img-responsive'
+            .form-group.text-center
+              =f.input :caption, label: false, placeholder: 'コメント'
+            .form-group.text-center
+              =f.button :submit, class: 'btn-lg btn-info btn-block'
+
+              = link_to "排除", post_path(@post), method: :delete, data: { confirm: "本当に排除してよろしいですか?" }
+              |
+              = link_to "戻る", root_path
