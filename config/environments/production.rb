@@ -78,7 +78,7 @@ Rails.application.configure do
   config.active_record.dump_schema_after_migration = false
   config.action_mailer.default_url_options = {host: 'https://guarded-headland-13658.herokuapp.com/'}
   ActionMailer::Base.delivery_method = :smtp
-  ActionMailer::Base.smtp_setting =
+  ActionMailer::Base.smtp_settings =
   {
     user_name: ENV['SENDGRID_USERNAME'],
     password: ENV['SENDGRID_PASSWORD'],
