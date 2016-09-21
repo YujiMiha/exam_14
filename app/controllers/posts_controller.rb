@@ -55,5 +55,5 @@ class PostsController < ApplicationController
         flash[:alert] = "That post doesn't belong to you!"
         redirect_to root_path
       end
-    end
+  end
 end

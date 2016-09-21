@@ -6,7 +6,7 @@ class ApplicationController < ActionController::Base
   # before_actionでdeviseのストロングパラメーターにnameカラムを追加するメソッドを実行します。
   before_action :configure_permitted_parameters, if: :devise_controller?
 
-  PERMISSIBLE_ATTRIBUTES = %i(user_name)
+  PERMISSIBLE_ATTRIBUTES = %i(name)
 
   protected
 
