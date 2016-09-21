@@ -17,7 +17,7 @@
         <%= f.label :名前 %><br />
         <%= f.text_field :name, class: "form-control", placeholder: "名前" %>
       </div>
-      <% if @user.provider.blank? %>
+
       <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
         <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
       <% end %>
@@ -44,7 +44,7 @@
         <%= f.label :current_password %><br />
         <%= f.password_field :current_password,  autocomplete: "off", class: "form-control", placeholder: "現在のパスワード（更新には入力が必要です。）" %>
       </div>
-      <% end %>
+      
 
       <br>
       <div class="actions">
