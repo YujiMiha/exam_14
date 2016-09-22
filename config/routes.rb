@@ -7,9 +7,9 @@ Rails.application.routes.draw do
    root 'posts#index'
    resources :posts
 
- end
+
 
    if Rails.env.development?
      mount LetterOpenerWeb::Engine, at: "/letter_opnner"
- end
+   end
 end
