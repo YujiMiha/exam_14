@@ -6,13 +6,8 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable, :confirmable, :omniauthable
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
-  validates :email, presence: true, length: { minimum: 4, maximum: 31 }
-  validates :user_name,  length: {  maximum: 31 }
-  validates :password, length: { minimum: 4, maximum: 31 }
-  validates :password_confirmation, presence: true, length: { minimum: 4, maximum: 31 }
-  devise :database_authenticatable, :registerable,
-         :recoverable, :rememberable, :trackable, :validatable
 
+  
   has_many :posts, dependent: :destroy
 
   def self.find_for_facebook_oauth(auth, signed_in_resource=nil)
